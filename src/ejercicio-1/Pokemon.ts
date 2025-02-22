@@ -68,6 +68,10 @@ export class Pokemon {
     }
 
     // Creamos un método para mostrar todos los datos de un pokemón
+    /**
+     * 
+     * @returns - Nos devuelve un string con todos los datos de un pokemón
+     */
     mostrarInfo(): string {
         return `
         Nombre: ${this.name}

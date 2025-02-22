@@ -5,13 +5,20 @@ export class Pokedex {
     private pokedex: Pokemon[];
 
     // Constructor para crear una pokedex
+    /**
+     * 
+     * @param pokedex - Lista de pokemons
+     */
     constructor(pokedex: Pokemon[]) {
         this.pokedex = pokedex;
     }
 
-    // Creamos los metodos diferentes métodos para que funcione la pokedex
-
-    // Creamos un método para agregar un pokemon
+    /**
+     * 
+     * Sirve para agregar un pokemon a la pokedex
+     * 
+     * @param pokemon - Pokemon a agregar
+     */
     agregarPokemon(pokemon: Pokemon): void {
         if (!this.pokedex.some((p) => p.getName === pokemon.getName)) {
             this.pokedex.push(pokemon);
@@ -20,14 +27,12 @@ export class Pokedex {
         }
     }
 
-    // Creamos un método para mostrar todos los pokemons
-    // mostrarTodos(): void {
-    //     this.pokedex.forEach((pokemon) => {
-    //         console.log(pokemon.getName);
-    //     });
-    // }
-
-    // Creamos un método que devuelva una lista con los nombres de los pokemons
+    /**
+     * 
+     * Sirve para mostrar todos los pokemons de la pokedex
+     * 
+     * @returns - Lista con los nombres de los pokemons
+     */
     mostrarTodos(): string[] {
         // Creamos una lista donde vamos a ir almacenando todos los pokemons
         let namePokemons: string[] = [];
@@ -44,7 +49,13 @@ export class Pokedex {
         // return this.pokedex.map(pokemon => pokemon.getName);
     }
 
-    // Creamos un método para buscar un pokemón por el nombre 
+    /**
+     * 
+     * Nos permite buscar un pokemon por el nombre, dentro de la pokedex
+     * 
+     * @param namePokemon - Nombre del pokemon a buscar
+     * @returns - Pokemon que se busco por el nombre
+     */
     buscarPorNombre(namePokemon: string): Pokemon | undefined {
         // Creamos una variable donde vamos almacenar al pokemon que se busco por el nombre
         let foundPokemon: Pokemon | undefined;
@@ -61,19 +72,14 @@ export class Pokedex {
         // return this.pokedex.find(pokemon => pokemon.getName === namePokemon);
     }
 
-    // Creamos un método para buscar pokemons por un tipo
+    /**
+     * 
+     * Nos permite buscar pokemons por el tipo
+     * 
+     * @param type - Tipo de pokemon a buscar
+     * @returns - Lista de pokemons que son del tipo solicitado
+     */
     buscarPorTipo(type: string): Pokemon[] {
-        // Creamos una variable, donde vamos a almacenar los pokemons de un tipo en concreto
-        // let pokemons: Pokemon[];
-
-        // // Recorremos la pokedex
-        // this.pokedex.forEach((pokemon) => {
-        //     if (type === pokemon.getType) pokemons.push(pokemon);
-        // });
-
-        // // retornamos la lista de los pokemons
-        // return pokemons;
-        // Manera mas eficiente con filter para buscar los pokemons por el tipo
         return this.pokedex.filter(pokemon => pokemon.getType === type);
     }
 }

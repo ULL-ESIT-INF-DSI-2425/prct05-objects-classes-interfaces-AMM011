@@ -5,11 +5,27 @@ export class Combat {
     // Creamos unos atributos para un pokemon y para el otro
     protected pokemon1: Pokemon;
     protected pokemon2: Pokemon;
-    // Creamos un método para realizar el ataque
+    /**
+     * 
+     * Función que realiza el ataque de un pokemon a otro
+     * 
+     * @param atacante - Pokemon que ataca
+     * @param defensor - Pokemon que defiende
+     * @param efectividad - Efectividad del ataque
+     * @returns - Daño que se le hace al pokemon
+     */
     private realizarAtaque(atacante: Pokemon, defensor: Pokemon, efectividad: number): number {
         return 50 * (atacante.getAttack / defensor.getDefense) * efectividad;
     }
-    // Creamos un método para calcular la efectividad de un ataque
+
+    /**
+     * 
+     * Función que calcula la efectividad de un ataque
+     * 
+     * @param tipoAtacante - Tipo del pokemon que ataca
+     * @param tipoDefensor - Tipo del pokemon que defiende
+     * @returns - Efectividad del ataque
+     */
     private calcularEfectividad(tipoAtacante: string, tipoDefensor: string): number {
         const efectividades: { [key: string]: { [key: string]: number } } = {
             "fuego": { "hierba": 2, "agua": 0.5, "eléctrico": 1 },
@@ -21,13 +37,24 @@ export class Combat {
         return efectividades[tipoAtacante][tipoDefensor] || 1;
     }
 
-    // Creamos un constructos para inicializar los pokemons que se van a enfrentar
+    /**
+     * 
+     * Constructor de la clase Combat
+     * 
+     * @param pokemon1 - Pokemon 1
+     * @param pokemon2 - Pokemon 2
+     */
     constructor(pokemon1: Pokemon, pokemon2: Pokemon) {
         this.pokemon1 = pokemon1;
         this.pokemon2 = pokemon2;
     }
 
-    // Creamos un método que dara comienzo al combante
+    /**
+     * 
+     * Función que inicia el combate entre dos pokemons
+     * 
+     * @returns - Mensaje del ganador
+     */
     start(): string {
         // creamos donde se almacenara el mensaje del ganador
         let winner: string = "";
