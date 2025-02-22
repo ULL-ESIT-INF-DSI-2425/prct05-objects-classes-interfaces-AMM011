@@ -7,7 +7,7 @@ import { Song } from "./Song";
  * @property {number} release - Año de lanzamiento del album
  * @property {Song[]} songs - Lista de canciones
  * @example
- * const album: IAlbum = { name: "Album", listeners: 1000, songs: [song1, song2] };
+ * const album: IAlbum = { name: "Album", release: 2010, songs: [song1, song2] };
  */
 interface IAlbum {
     name: string;
