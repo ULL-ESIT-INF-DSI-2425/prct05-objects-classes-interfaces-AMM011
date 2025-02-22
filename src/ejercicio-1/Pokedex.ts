@@ -62,19 +62,19 @@ export class Pokedex {
     }
 
     // Creamos un método para buscar pokemons por un tipo
-    buscarPorTipo(type: string): Pokemon[] | undefined {
+    buscarPorTipo(type: string): Pokemon[] {
         // Creamos una variable, donde vamos a almacenar los pokemons de un tipo en concreto
-        let pokemons: Pokemon[] | undefined;
+        // let pokemons: Pokemon[];
 
-        // Recorremos la pokedex
-        this.pokedex.forEach((pokemon) => {
-            if (type === pokemon.getType) pokemons?.push(pokemon);
-        });
+        // // Recorremos la pokedex
+        // this.pokedex.forEach((pokemon) => {
+        //     if (type === pokemon.getType) pokemons.push(pokemon);
+        // });
 
-        // retornamos la lista de los pokemons
-        return pokemons;
+        // // retornamos la lista de los pokemons
+        // return pokemons;
         // Manera mas eficiente con filter para buscar los pokemons por el tipo
-        // return this.pokedex.filter(pokemon => pokemon.getType === type);
+        return this.pokedex.filter(pokemon => pokemon.getType === type);
     }
 }
 

@@ -5,6 +5,21 @@ export class Combat {
     // Creamos unos atributos para un pokemon y para el otro
     protected pokemon1: Pokemon;
     protected pokemon2: Pokemon;
+    // Creamos un método para realizar el ataque
+    private realizarAtaque(atacante: Pokemon, defensor: Pokemon, efectividad: number): number {
+        return 50 * (atacante.getAttack / defensor.getDefense) * efectividad;
+    }
+    // Creamos un método para calcular la efectividad de un ataque
+    private calcularEfectividad(tipoAtacante: string, tipoDefensor: string): number {
+        const efectividades: { [key: string]: { [key: string]: number } } = {
+            "fuego": { "hierba": 2, "agua": 0.5, "eléctrico": 1 },
+            "agua": { "fuego": 2, "hierba": 0.5, "eléctrico": 0.5 },
+            "hierba": { "agua": 2, "fuego": 0.5, "eléctrico": 1 },
+            "eléctrico": { "agua": 2, "hierba": 1, "fuego": 1 }
+        };
+
+        return efectividades[tipoAtacante][tipoDefensor] || 1;
+    }
 
     // Creamos un constructos para inicializar los pokemons que se van a enfrentar
     constructor(pokemon1: Pokemon, pokemon2: Pokemon) {
@@ -13,87 +28,54 @@ export class Combat {
     }
 
     // Creamos un método que dara comienzo al combante
-    start() {
+    start(): string {
+        // creamos donde se almacenara el mensaje del ganador
+        let winner: string = "";
+
         // Comenzamos hallando la efectividad de cada pokemon
         let typePokemon1: string = this.pokemon1.getType;
         let typePokemon2: string = this.pokemon2.getType;
 
         // Ahora creamos una variable donde vamos almacenar z tan efectivo es
-        let effectiveness1: number = 0;
-        let effectiveness2: number = 0;
-
-        // Ahora hacemos una comprobación de que tal efectivo es
-        // Efectivo => efectividad = 2
-        // Neutral => efectividad = 1
-        // No efectivo => efectividad = 0.5
-        if (typePokemon1 === "fuego" && typePokemon2 === "hierba") {
-            effectiveness1 = 2;
-        } else if (typePokemon1 === "fuego" && typePokemon2 === "agua") {
-            effectiveness1 = 0.5;
-        } else if (typePokemon1 === "fuego" && typePokemon2 === "eléctrico") {
-            effectiveness1 = 1;
-        } else if (typePokemon1 === "agua" && typePokemon2 === "hierba") {
-            effectiveness1 = 0.5;
-        } else if (typePokemon1 === "agua" && typePokemon2 === "eléctrico") {
-            effectiveness1 = 0.5;
-        } else if (typePokemon1 === "hierba" && typePokemon2 === "eléctrico") {
-            effectiveness1 = 1;
-        }
-
-        // Ahora para el segundo pokemon
-        if (typePokemon2 === "fuego" && typePokemon1 === "hierba") {
-            effectiveness2 = 2;
-        } else if (typePokemon2 === "fuego" && typePokemon1 === "agua") {
-            effectiveness2 = 0.5;
-        } else if (typePokemon2 === "fuego" && typePokemon1 === "eléctrico") {
-            effectiveness2 = 1;
-        } else if (typePokemon2 === "agua" && typePokemon1 === "hierba") {
-            effectiveness2 = 0.5;
-        } else if (typePokemon2 === "agua" && typePokemon1 === "eléctrico") {
-            effectiveness2 = 0.5;
-        } else if (typePokemon2 === "hierba" && typePokemon1 === "eléctrico") {
-            effectiveness2 = 1;
-        }
+        let effectiveness1: number = this.calcularEfectividad(typePokemon1, typePokemon2);
+        let effectiveness2: number = this.calcularEfectividad(typePokemon2, typePokemon1);
 
         // Creamos una variables donde vamos almacenar las vidas de cada pokemon
         let heal1: number = this.pokemon1.getHp;
-        let heal2: number = this.pokemon1.getHp;
+        let heal2: number = this.pokemon2.getHp;
 
-        while (heal1 > 0 || heal2 > 0) {
-            // Creamos una variable donde almacenar el daño
-            let damage: number = 0;
-
-            // Comienza atacando el primer pokemon
-            damage = 50 * (this.pokemon1.getAttack / this.pokemon2.getDefense) * effectiveness1;
-
-            // Se lo efectuamos a la vida
+        while (heal1 > 0 && heal2 > 0) {
+            // Almacenamos el daño que se le va a hacer al pokemon
+            let damage = this.realizarAtaque(this.pokemon1, this.pokemon2, effectiveness1);
+            // Ahora le restamos el daño a la vida del pokemon
             heal2 -= damage;
+            
+            // Mostramos el daño que se le ha hecho al pokemon
+            console.log(`El daño infligido por ${this.pokemon1.getName} ha sido ${damage.toFixed(2)}.`);
 
-            // Mostramos por pantalla los datos actual de pokemons
-            if (heal2 < 0) {
-                console.log(`${this.pokemon1.getName} ha ganado a ${this.pokemon2.getName}!!!`);
+            // Comprobamos si el pokemon ha muerto
+            if (heal2 <= 0) {
+                winner = `${this.pokemon1.getName} ha ganado a ${this.pokemon2.getName}!!!`;
                 break;
-            } else {
-                console.log(`El daño infligo ha sido ${damage}.`);
-                console.log(`El estado actual de ${this.pokemon1.getName} es ${heal1}`);	
-                console.log(`El estado actual de ${this.pokemon2.getName} es ${heal2}`);
             }
-
-            // Ahora el turno del siguiente pokemon
-            damage = 50 * (this.pokemon2.getAttack / this.pokemon1.getDefense) * effectiveness2;
-
-            // Se lo efectuamos a la vida
+        
+            // Mostramos la vida que le queda al pokemon
+            console.log(`HP restante de ${this.pokemon2.getName}: ${heal2.toFixed(2)}`);
+            
+            // Ahora hacemos lo mismo para el segundo pokemon
+            damage = this.realizarAtaque(this.pokemon2, this.pokemon1, effectiveness2);
             heal1 -= damage;
+        
+            console.log(`El daño infligido por ${this.pokemon2.getName} ha sido ${damage.toFixed(2)}.`);
 
-            // Mostramos por pantalla los datos actual de los pokemons
-            if (heal1 < 0) {
-                console.log(`${this.pokemon2.getName} ha ganado a ${this.pokemon1.getName}!!!`);
+            if (heal1 <= 0) {
+                winner = `${this.pokemon2.getName} ha ganado a ${this.pokemon1.getName}!!!`;
                 break;
-            } else {
-                console.log(`El daño infligo ha sido ${damage}.`);
-                console.log(`El estado actual de ${this.pokemon1.getName} es ${heal1}`);
-                console.log(`El estado actual de ${this.pokemon2.getName} es ${heal2}`);
             }
+        
+            console.log(`HP restante de ${this.pokemon1.getName}: ${heal1.toFixed(2)}`);
         }
+
+        return winner;
     }
 }
