@@ -1,6 +1,6 @@
 /**
  * Interfaz para la clase Song
- * @exports
+ * @module
  * @interface ISong
  * @property {string} name - Nombre de la canción
  * @property {number} duration - Duración de la canción
@@ -10,7 +10,7 @@
  * @example
  * const song: ISong = { name: "Song", duration: 180, genre: ["Pop", "Rock"], single: true, plays: 1000 };
  */
-interface ISong {
+export interface ISong {
     name: string;
     duration: number;
     genre: (string[] | string);
@@ -20,9 +20,8 @@ interface ISong {
 
 /**
  * Clase que representa una canción
- * @exports
+ * @module
  * @class Song
- * @implements {ISong}
  * @example
  * const song: Song = new Song("Song", 180, ["Pop", "Rock"], true, 1000);
  */

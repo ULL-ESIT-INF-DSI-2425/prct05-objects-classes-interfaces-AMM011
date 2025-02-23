@@ -1,7 +1,7 @@
 import { Album } from './Album';
 /**
  * Interfaz que representa un artista
- * @exports
+ * @module
  * @interface IArtist
  * @property {string} name - Nombre del artista
  * @property {number} listeners - Numero de oyentes
@@ -9,16 +9,15 @@ import { Album } from './Album';
  * @example
  * const artist: IArtist = { name: "Artist", listeners: 1000, albums: [album1, album2] };
  */
-interface IArtist {
+export interface IArtist {
     name: string;
     listeners: number;
     albums: Album[];
 }
 /**
  * Clase que representa un artista
- * @exports
+ * @module
  * @class Artist
- * @implements {IArtist}
  * @example
  * const artist: Artist = new Artist("Artist", 1000, [album1, album2]);
  */

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsc-watch --onSuccess \"node dist/index.js\"",
-    "doc": "typedoc",
+    "doc": "npx typedoc --entryPoints src/ejercicio-1/**/*.ts src/ejercicio-2/**/*.ts --out docs",
     "test": "vitest run",
     "coverage": "vitest run --coverage --coverage.include \"src/**/*\""
   },
@@ -28,6 +28,7 @@
     "globals": "^16.0.0",
     "prettier": "^3.5.1",
     "tsc-watch": "^6.2.1",
+    "typedoc": "^0.27.8",
     "typescript-eslint": "^8.24.1",
     "vitest": "^3.0.6"
   }

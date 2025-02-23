@@ -1,13 +1,6 @@
 ### Si se muestra el error `sh: 1: vitest: Permission denied`, es consecuencia de permisos incorrectos en el archivo ejecutable
 
-- El archivo de Vitest puede no tener permisos de ejecución. Puedes solucionarlo así:
-```bash 
-chmod +x ./node_modules/.bin/vitest
-````
 
-### Ahora si cuando ejecutamos `npx vitest`nos da error de permisos, podemos solucionarlo así:
-```bash
-chmod +x ./node_modules/@esbuild/linux-x64/bin/esbuild
 ````
 # Para ejecutar los test con coverage
 # npx vitest run --coverage

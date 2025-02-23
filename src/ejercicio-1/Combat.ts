@@ -1,4 +1,4 @@
-import { Pokemon } from "./pokemon";
+import { Pokemon } from "./Pokemon";
 import { Pokedex } from "./Pokedex";
 
 export class Combat {

@@ -1,7 +1,7 @@
 import { Song } from "./Song";
 /**
  * Interfaz que representa un album
- * @exports
+ * @module
  * @interface IAlbum
  * @property {string} name - Nombre del album
  * @property {number} release - Año de lanzamiento del album
@@ -9,7 +9,7 @@ import { Song } from "./Song";
  * @example
  * const album: IAlbum = { name: "Album", release: 2010, songs: [song1, song2] };
  */
-interface IAlbum {
+export interface IAlbum {
     name: string;
     release: number;
     songs: Song[];
@@ -17,9 +17,8 @@ interface IAlbum {
 
 /**
  * Clase que representa un album
- * @exports
+ * @module
  * @class Album
- * @implements {IAlbum}
  * @example
  * const album: Album = new Album("Album", 2021, [song1, song2]);
  */
@@ -29,7 +28,7 @@ export class Album implements IAlbum {
      * Constructor de la clase Album, para crear un objeto como si fuera un disco.
      * 
      * @param name - Nombre del album
-     * @param listeners - Numero de oyentes
+     * @param release - Numero de oyentes
      * @param songs - Lista de canciones
      */
     constructor(public name: string, public release: number, public songs: Song[]) {

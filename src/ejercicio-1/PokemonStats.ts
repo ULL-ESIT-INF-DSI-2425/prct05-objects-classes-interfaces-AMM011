@@ -1,6 +1,6 @@
 /**
  * Interfaz que representa las estadisticas de un pokemón
- * @exports
+ * @module
  * @interface PokemonStats
  * @property {number} attack - Ataque del pokemón
  * @property {number} defense - Defensa del pokemón

@@ -2,6 +2,13 @@ import { Song } from "./Song";
 import { Album } from "./Album";
 import { Artist } from "./Artist";
 
+/**
+ * Clase que representa una librería de música
+ * @module
+ * @class MusicLibrary
+ * @example
+ * const library: MusicLibrary = new MusicLibrary([artist]);
+ */
 export class MusicLibrary {
     /**
      * Librería que contiene diferentes artistas con sus diferentes datos.
@@ -9,10 +16,7 @@ export class MusicLibrary {
     private library: Artist[];
 
     /**
-     * 
-     * Constructor de la clase MusicLibrary
-     * 
-     * @param artist - Artista
+     * @param library - Artista principal de la biblioteca musical
      */
     constructor(library: Artist[]) {
         this.library = library;

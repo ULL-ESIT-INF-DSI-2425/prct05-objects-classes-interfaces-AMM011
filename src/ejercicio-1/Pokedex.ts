@@ -1,5 +1,8 @@
-import { Pokemon } from "./pokemon";
+import { Pokemon } from "./Pokemon";
 
+/**
+ * Clase Pokedex
+ */
 export class Pokedex {
     // Creamos un atributo que contendra la lista de pokemons, como la pokedex
     private pokedex: Pokemon[];

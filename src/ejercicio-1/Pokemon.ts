@@ -1,4 +1,4 @@
-import { PokemonStats } from "./pokemonstats";
+import { PokemonStats } from "./PokemonStats";
 
 /**
  * Clase Pokemon que contiene todas las propiedades de un pokemon

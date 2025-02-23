@@ -1,0 +1,94 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="."><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>prct05-objects-classes-interfaces-amm011</title><meta name="description" content="Documentation for prct05-objects-classes-interfaces-amm011"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script><script async src="assets/hierarchy.js" id="tsd-hierarchy-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search"><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">prct05-objects-classes-interfaces-amm011</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h1>prct05-objects-classes-interfaces-amm011</h1></div><div class="tsd-panel tsd-typography"><a id="práctica-5-objetos-clases-e-interfaces" class="tsd-anchor"></a><h1 class="tsd-anchor-link">Práctica 5: Objetos, clases e interfaces<a href="#práctica-5-objetos-clases-e-interfaces" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><ul>
+<li>👤 Autor: Alfredo Moreno Mondragón</li>
+<li>📩 Correo institucional: <a href="mailto:alu0101515601@ull.edu.es">alu0101515601@ull.edu.es</a></li>
+<li>👨🏻‍🏫 Profesor: Dr.Eduardo Manuel Segredo González</li>
+<li>📚 Asignatura: Desarrollo de Sistemas Informáticos</li>
+</ul>
+<a id="objetivo" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Objetivo<a href="#objetivo" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Esta práctica tiene como objetivo familiarizarse con el uso de objetos, clases e interfaces en TypeScript. A través de ejercicios prácticos, se busca entender cómo aplicar conceptos esenciales de la programación orientada a objetos.</p>
+<a id="ejercicio-1-combates-pokémon" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Ejercicio 1: Combates Pokémon<a href="#ejercicio-1-combates-pokémon" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>En este ejercicio se debe crear una Pokédex que almacene información sobre diferentes Pokémon. Cada Pokémon debe contener:</p>
+<ul>
+<li>Nombre</li>
+<li>Peso y altura</li>
+<li>Tipo (fuego, agua, hierba, eléctrico)</li>
+<li>Estadísticas: ataque, defensa, velocidad, HP máximo</li>
+</ul>
+<p>La Pokédex permitirá:</p>
+<ul>
+<li>Mostrar la información de cada Pokémon.</li>
+<li>Buscar Pokémon por cualquier criterio (tipo, nombre).</li>
+</ul>
+<a id="simulación-de-combate" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Simulación de Combate<a href="#simulación-de-combate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>Además, se debe diseñar una clase <code>Combat</code> que simule un combate entre dos Pokémon. El combate funcionará por turnos, siguiendo estas reglas:</p>
+<ul>
+<li>
+<p>El primer Pokémon en el constructor será el primero en atacar.</p>
+</li>
+<li>
+<p>El daño se calcula con la fórmula:</p>
+<pre><code><span class="hl-0">daño</span><span class="hl-1"> = </span><span class="hl-2">50</span><span class="hl-1"> * (</span><span class="hl-0">ataque</span><span class="hl-1"> / </span><span class="hl-0">defensa</span><span class="hl-1">) * </span><span class="hl-0">efectividad</span>
+</code><button>Copy</button></pre>
+
+</li>
+<li>
+<p>Los valores de efectividad dependen de los tipos de los Pokémon:</p>
+<ul>
+<li>Efectivo: 2</li>
+<li>Neutral: 1</li>
+<li>No efectivo: 0.5</li>
+</ul>
+</li>
+</ul>
+<p>Las interacciones entre tipos son:</p>
+<ul>
+<li>Fuego &gt; Hierba</li>
+<li>Fuego &lt; Agua</li>
+<li>Fuego = Eléctrico</li>
+<li>Agua &lt; Hierba</li>
+<li>Agua &lt; Eléctrico</li>
+<li>Hierba = Eléctrico</li>
+</ul>
+<p>El método <code>start</code> mostrará la evolución del combate, actualizando el HP de cada Pokémon tras cada ataque hasta que uno sea derrotado.</p>
+<a id="ejercicio-2-biblioteca-musical" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Ejercicio 2: Biblioteca Musical<a href="#ejercicio-2-biblioteca-musical" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>En este ejercicio se debe desarrollar una aplicación que gestione una biblioteca musical. La estructura debe estar compuesta por clases e interfaces que representen:</p>
+<ul>
+<li>
+<p><strong>Canciones</strong>: Cada canción debe incluir:</p>
+<ul>
+<li>Título</li>
+<li>Artista</li>
+<li>Álbum</li>
+<li>Duración</li>
+<li>Género</li>
+</ul>
+</li>
+<li>
+<p><strong>Playlists</strong>: Listas de reproducción personalizadas que permitan:</p>
+<ul>
+<li>Añadir o eliminar canciones</li>
+<li>Mostrar la duración total de la lista</li>
+<li>Buscar canciones por título, artista o género</li>
+</ul>
+</li>
+</ul>
+<a id="funcionalidades-clave" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Funcionalidades clave<a href="#funcionalidades-clave" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>
+<p><strong>Reproducción de canciones</strong>: Implementar una función que simule la reproducción de una canción mostrando su título y el tiempo restante hasta finalizar.</p>
+</li>
+<li>
+<p><strong>Gestión de listas</strong>:</p>
+<ul>
+<li>Crear nuevas playlists</li>
+<li>Eliminar playlists existentes</li>
+<li>Mostrar todas las canciones de una playlist</li>
+</ul>
+</li>
+<li>
+<p><strong>Estadísticas</strong>:</p>
+<ul>
+<li>Número total de canciones en la biblioteca</li>
+<li>Duración total de todas las canciones</li>
+</ul>
+</li>
+</ul>
+<p>Este ejercicio tiene como objetivo practicar el diseño de estructuras complejas usando clases e interfaces en TypeScript, así como aplicar principios de encapsulación y modularidad.</p>
+<p><a href="https://github.com/ULL-ESIT-INF-DSI-2425/coverage-coveralls-github-actions/actions/workflows/ci.yml"><img src="https://github.com/ULL-ESIT-INF-DSI-2425/coverage-coveralls-github-actions/actions/workflows/ci.yml/badge.svg" alt="Tests"></a></p>
+<p><a href="https://coveralls.io/github/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-AMM011?branch=main"><img src="https://coveralls.io/repos/github/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-AMM011/badge.svg?branch=main" alt="Coverage Status"></a></p>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#práctica-5-objetos-clases-e-interfaces"><span>Práctica 5: <wbr/>Objetos, clases e interfaces</span></a><ul><li><a href="#objetivo"><span>Objetivo</span></a></li><li><a href="#ejercicio-1-combates-pokémon"><span>Ejercicio 1: <wbr/>Combates <wbr/>Pokémon</span></a></li><li><ul><li><a href="#simulación-de-combate"><span>Simulación de <wbr/>Combate</span></a></li></ul></li><li><a href="#ejercicio-2-biblioteca-musical"><span>Ejercicio 2: <wbr/>Biblioteca <wbr/>Musical</span></a></li><li><ul><li><a href="#funcionalidades-clave"><span>Funcionalidades clave</span></a></li></ul></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html">prct05-objects-classes-interfaces-amm011</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>
