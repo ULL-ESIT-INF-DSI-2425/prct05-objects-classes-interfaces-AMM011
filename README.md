@@ -79,5 +79,4 @@ En este ejercicio se debe desarrollar una aplicación que gestione una bibliotec
 Este ejercicio tiene como objetivo practicar el diseño de estructuras complejas usando clases e interfaces en TypeScript, así como aplicar principios de encapsulación y modularidad.
 
 [![Tests](https://github.com/ULL-ESIT-INF-DSI-2425/coverage-coveralls-github-actions/actions/workflows/ci.yml/badge.svg)](https://github.com/ULL-ESIT-INF-DSI-2425/coverage-coveralls-github-actions/actions/workflows/ci.yml)
-
 [![Coverage Status](https://coveralls.io/repos/github/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-AMM011/badge.svg?branch=main)](https://coveralls.io/github/ULL-ESIT-INF-DSI-2425/prct05-objects-classes-interfaces-AMM011?branch=main)
