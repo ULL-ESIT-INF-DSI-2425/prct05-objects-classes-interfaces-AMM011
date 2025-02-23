@@ -75,10 +75,12 @@ export class MusicLibrary {
             albums = albums.concat(artist.getAlbumsArtist);
         });
 
-        albums.forEach((album) =>{
+        for (const album of albums) {
             const foundSong = album.getSongsAlbum.find((s) => s.getNameSong === song);
-            if (foundSong) return foundSong;
-        });
+            if (foundSong) {
+                return foundSong;
+            }
+        }
 
         return undefined;
     }
