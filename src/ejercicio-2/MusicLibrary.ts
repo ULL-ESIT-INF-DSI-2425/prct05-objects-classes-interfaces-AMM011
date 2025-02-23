@@ -92,9 +92,9 @@ export class MusicLibrary {
     /**
      * Muestra la consola la información de la biblioteca en formato tabl
      */
-    displayLibrary(): void {
-        console.table(this.getLibrary);
-    }
+    // displayLibrary(): void {
+    //     console.table(this.getLibrary);
+    // }
 
     /**
      * Método para obtener el número de canciones de un albúm

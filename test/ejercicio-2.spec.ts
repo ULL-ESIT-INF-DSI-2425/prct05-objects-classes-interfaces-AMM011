@@ -82,4 +82,29 @@ describe('MusicLibrary Tests', () => {
     test('debería encontrar un álbum en la librería de música', () => {
         expect(musicLibrary.findAlbum("Album1")).toEqual(album1);
     });
+
+    test('debería devolver undefined si no se encuentra una canción', () => {
+        expect(musicLibrary.findSong("Song3")).toBeUndefined();
+    });
+});
+
+describe('Song Tests', () => {
+    test('debería devolver la lista de géneros de una canción', () => {
+        expect(song1.getGenreSong).toEqual(['Pop', 'Rock']);
+    });
+    test('debería devolver si una canción es un single', () => {
+        expect(song1.getSingleSong).toEqual(true);
+    });
+});
+
+describe('Artist Tests', () => {
+    test('debería devolver el número de oyentes de un artista', () => {
+        expect(artist1.getListenersArtist).toEqual(1000);
+    });
+});
+
+describe('Album Tests', () => {
+    test('debería devolver el año de lanzamiento del álbum', () => {
+        expect(album1.getreleaseAlbum).toEqual(2010);
+    });
 });

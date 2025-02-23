@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>20/24</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>20/24</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
@@ -139,9 +139,7 @@
 <a name='L74'></a><a href='#L74'>74</a>
 <a name='L75'></a><a href='#L75'>75</a>
 <a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -180,19 +178,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">31x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -203,14 +201,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -219,7 +217,7 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * Interfaz para la clase Song
- * @exports
+ * @module
  * @interface ISong
  * @property {string} name - Nombre de la canción
  * @property {number} duration - Duración de la canción
@@ -229,7 +227,7 @@
  * @example
  * const song: ISong = { name: "Song", duration: 180, genre: ["Pop", "Rock"], single: true, plays: 1000 };
  */
-interface ISong {
+export interface ISong {
     name: string;
     duration: number;
     genre: (string[] | string);
@@ -239,9 +237,8 @@ interface ISong {
 &nbsp;
 /**
  * Clase que representa una canción
- * @exports
+ * @module
  * @class Song
- * @implements {ISong}
  * @example
  * const song: Song = new Song("Song", 180, ["Pop", "Rock"], true, 1000);
  */
@@ -279,15 +276,15 @@ export class Song implements ISong {
     /**
      * Getter para obtener el genero de la canción
      */
-<span class="fstat-no" title="function not covered" >    get getGenreSong(): (string[] | string) {</span>
-<span class="cstat-no" title="statement not covered" >        return this.genre;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+    get getGenreSong(): (string[] | string) {
+        return this.genre;
+    }
     /**
      * Getter para saber si la canción es un single
      */
-<span class="fstat-no" title="function not covered" >    get getSingleSong(): boolean {</span>
-<span class="cstat-no" title="statement not covered" >        return this.single;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+    get getSingleSong(): boolean {
+        return this.single;
+    }
     /**
      * Getter para obtener las reproducciones de la canción
      */
@@ -301,7 +298,7 @@ export class Song implements ISong {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-02-23T14:02:54.764Z
+                at 2025-02-23T15:14:43.875Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -50,3 +50,9 @@ describe('Combat Tests', () => {
     expect(result).toBe('Pikachu ha ganado a Charmander!!!');
   });
 });
+
+describe('Pokemon Tests', () => {
+  test('debería mostrar la información de un Pokémon correctamente', () => {
+    expect(pikachu.mostrarInfo()).toContain('Pikachu');
+  });
+});

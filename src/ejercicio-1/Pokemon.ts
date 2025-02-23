@@ -39,13 +39,13 @@ export class Pokemon {
         return this.name;
     }
 
-    get getWeight(): number {
-        return this.weight;
-    }
+    // get getWeight(): number {
+    //     return this.weight;
+    // }
 
-    get getHeight(): number {
-        return this.height;
-    }
+    // get getHeight(): number {
+    //     return this.height;
+    // }
 
     get getType(): string {
         return this.type;
@@ -59,9 +59,9 @@ export class Pokemon {
         return this.stats.defense;
     }
 
-    get getSpeed(): number {
-        return this.stats.speed;
-    }
+    // get getSpeed(): number {
+    //     return this.stats.speed;
+    // }
 
     get getHp(): number {
         return this.stats.hp;

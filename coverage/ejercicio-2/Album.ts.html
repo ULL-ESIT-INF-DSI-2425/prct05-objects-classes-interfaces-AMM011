@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.28% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>33/35</span>
+                <span class='fraction'>35/35</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.28% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>33/35</span>
+                <span class='fraction'>35/35</span>
             </div>
         
             
@@ -165,9 +165,7 @@
 <a name='L100'></a><a href='#L100'>100</a>
 <a name='L101'></a><a href='#L101'>101</a>
 <a name='L102'></a><a href='#L102'>102</a>
-<a name='L103'></a><a href='#L103'>103</a>
-<a name='L104'></a><a href='#L104'>104</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L103'></a><a href='#L103'>103</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -201,10 +199,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">32x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -216,14 +214,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -272,7 +270,7 @@
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { Song } from "./Song";
 /**
  * Interfaz que representa un album
- * @exports
+ * @module
  * @interface IAlbum
  * @property {string} name - Nombre del album
  * @property {number} release - Año de lanzamiento del album
@@ -280,7 +278,7 @@
  * @example
  * const album: IAlbum = { name: "Album", release: 2010, songs: [song1, song2] };
  */
-interface IAlbum {
+export interface IAlbum {
     name: string;
     release: number;
     songs: Song[];
@@ -288,9 +286,8 @@ interface IAlbum {
 &nbsp;
 /**
  * Clase que representa un album
- * @exports
+ * @module
  * @class Album
- * @implements {IAlbum}
  * @example
  * const album: Album = new Album("Album", 2021, [song1, song2]);
  */
@@ -300,7 +297,7 @@ export class Album implements IAlbum {
      * Constructor de la clase Album, para crear un objeto como si fuera un disco.
      * 
      * @param name - Nombre del album
-     * @param listeners - Numero de oyentes
+     * @param release - Numero de oyentes
      * @param songs - Lista de canciones
      */
     constructor(public name: string, public release: number, public songs: Song[]) {
@@ -318,9 +315,9 @@ export class Album implements IAlbum {
     /**
      * Getter para obtener el año de lanzamiento del album
      */
-<span class="fstat-no" title="function not covered" >    get getreleaseAlbum(): number {</span>
-<span class="cstat-no" title="statement not covered" >        return this.release;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+    get getreleaseAlbum(): number {
+        return this.release;
+    }
     /**
      * Getter para obtener la lista de canciones del album
      */
@@ -379,7 +376,7 @@ export class Album implements IAlbum {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-02-23T14:02:54.764Z
+                at 2025-02-23T15:14:43.875Z
             </div>
         <script src="../prettify.js"></script>
         <script>
