@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "tsc-watch --onSuccess \"node dist/index.js\"",
     "doc": "typedoc",
-    "test": "vitest run"
+    "test": "vitest run",
+    "coverage": "vitest run --coverage --coverage.include src/*"
   },
   "repository": {
     "type": "git",
