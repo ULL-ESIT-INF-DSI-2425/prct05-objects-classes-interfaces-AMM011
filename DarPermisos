@@ -9,4 +9,5 @@ chmod +x ./node_modules/.bin/vitest
 ```bash
 chmod +x ./node_modules/@esbuild/linux-x64/bin/esbuild
 ````
-
+# Para ejecutar los test con coverage
+# npx vitest run --coverage
