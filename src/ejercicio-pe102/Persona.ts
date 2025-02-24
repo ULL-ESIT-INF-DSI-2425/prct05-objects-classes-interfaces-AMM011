@@ -59,26 +59,50 @@ export abstract class Persona {
       this.apellidos = apellidos;
     }
   
+    /**
+     * 
+     * @returns - retornamos fecha de naciemto
+     */
     public getFechaNacimiento(): Date {
       return this.fechaNacimiento;
     }
-  
+    
+    /**
+     * 
+     * @param fechaNacimiento - fecha de nacimiento
+     */
     public setFechaNacimiento(fechaNacimiento: Date): void {
       this.fechaNacimiento = fechaNacimiento;
     }
 
+    /**
+     * 
+     * @returns - apodo
+     */
     public getApodo(): string {
       return this.apodo;
     }
 
+    /**
+     * 
+     * @param apodo - apodo
+     */
     public setApodo(apodo: string): void {
       this.apodo = apodo;
     }
 
+    /**
+     * 
+     * @returns - pais
+     */
     public getPais(): string {
       return this.pais;
     }
     
+    /**
+     * 
+     * @param pais - pais
+     */
     public setPais(pais: string): void {
       this.pais = pais;
     }
